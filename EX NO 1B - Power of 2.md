@@ -1,30 +1,55 @@
 
-# EX 1B Power of 2
-## DATE:
+# EX 1B Perfect Square Checker
+## DATE: 08/08/2025
 ## AIM:
-To write a Java program to for given constraints.Given an integer n, return true if it is a power of two. Otherwise, return false.
-
-An integer n is a power of two, if there exists an integer x such that n == 2x.
+To write a Java program that takes a positive integer num from the user and checks whether it is a perfect square without using any built-in functions like sqrt().
 
 ## Algorithm
-1. 
-2. 
-3. 
-4.  
-5.   
+1. Start the program.
+2. Read the integer num from the user.
+3. If num < 2, return true (since 1 is a perfect square).
+4. Use Newton’s method to approximate the square root:
+   Start with x = num / 2.
+   While x * x > num, update x using:
+   x = (x + num / x) / 2
+5. After convergence, check if x * x == num.
+6. Print true if it is a perfect square, otherwise false.
+7. End the program. 
 
 ## Program:
 ```
 /*
-Program to implement Reverse a String
-Developed by: 
-Register Number:  
+Program to check whether a number is a Perfect Square
+Developed by: Priyanka S
+Register Number: 212222040125  
 */
+
+import java.util.Scanner;
+public class Solution {
+    public boolean isPerfectSquare(int num) {
+        if (num < 2) return true;
+        long x = num / 2;
+        while (x * x > num) {
+            x = (x + num / x) / 2;
+        }
+        return (x * x == num);
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Solution sol = new Solution();
+        int num = scanner.nextInt();
+        boolean result = sol.isPerfectSquare(num);
+        System.out.println(result);
+        scanner.close();
+    }
+}
+
 ```
 
 ## Output:
 
+<img width="831" height="226" alt="image" src="https://github.com/user-attachments/assets/31642c16-3b2a-4024-b517-251385a9ad22" />
 
 
 ## Result:
-The program successfully implemented and the expected output is verified.
+The program successfully checks whether the given number is a perfect square without using built-in square-root functions.
