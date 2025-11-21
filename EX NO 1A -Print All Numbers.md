@@ -1,6 +1,6 @@
 
 # EX 1A Palindrome Number 
-## DATE: 22/08/2025
+## DATE: 06/08/2025
 ## AIM:
 To write a Java program that takes an integer input x from the user and checks whether it is a palindrome, i.e., it reads the same forward and backward.
 
